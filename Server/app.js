@@ -9,19 +9,19 @@ const videos = [
         id: 1,
         poster: '/thumbnail/1',
         duration: '3 mins',
-        name: 'Sample 1'
+        name: 'මහ පිරිත'
     },
     {
         id: 2,
         poster: '/thumbnail/2',
         duration: '4 mins',
-        name: 'Sample 2'
+        name: 'සෙත් පිරිත්'
     },
     {
         id: 3,
         poster: '/thumbnail/3',
         duration: '2 mins',
-        name: 'Sample 3'
+        name: 'බුදු ගුණ'
     },
 ];
 
