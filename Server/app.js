@@ -2,23 +2,24 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const cors = require('cors');
+const thumbsupply = require('thumbsupply');
 
 const videos = [
     {
-        id: 0,
-        poster: '/video/0/poster',
+        id: 1,
+        poster: '/thumbnail/1',
         duration: '3 mins',
         name: 'Sample 1'
     },
     {
-        id: 1,
-        poster: '/video/1/poster',
+        id: 2,
+        poster: '/thumbnail/2',
         duration: '4 mins',
         name: 'Sample 2'
     },
     {
-        id: 2,
-        poster: '/video/2/poster',
+        id: 3,
+        poster: '/thumbnail/3',
         duration: '2 mins',
         name: 'Sample 3'
     },
@@ -62,6 +63,22 @@ app.get('/video/:id', (req, res) => {
         res.writeHead(200, head);
         fs.createReadStream(path).pipe(res);
     }
+});
+
+/* app.get('/video/:id/poster', (req, res) => {
+    console.log(id);
+}); */
+
+app.get('/thumbnail/:id', (req, res) => {
+    const path = `Media/${req.params.id}.png`;
+    const stat = fs.statSync(path);
+    const fileSize = stat.size;
+    const head = {
+        'Content-Length': fileSize,
+        'Content-Type': 'image/png',
+    };
+    res.writeHead(200, head);
+    fs.createReadStream(path).pipe(res);
 });
 
 app.listen(4000, () => {
