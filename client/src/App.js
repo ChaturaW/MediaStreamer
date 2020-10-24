@@ -4,8 +4,8 @@ import {
     BrowserRouter as Router,
     Switch,
 } from "react-router-dom";
-import Home from './Home';
-import Player from './Player';
+import Home from './Components/Home';
+import Player from './Components/Player';
 import './App.css';
 
 function App() {

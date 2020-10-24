@@ -31,7 +31,7 @@ export default class Home extends Component {
                                     <img src={`http://192.168.1.7:4000${video.poster}`} alt={video.name} />
                                     <div className="card-body">
                                         <p>{video.name}</p>
-                                        <p>{video.duration}</p>
+                                        <p>{video.duration}</p>                                        
                                     </div>
                                 </div>
                             </Link>
