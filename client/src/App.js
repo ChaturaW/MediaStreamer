@@ -7,15 +7,19 @@ import {
 import Home from './Components/Home';
 import Player from './Components/Player';
 import './App.css';
+import { Component } from 'react';
 
-function App() {
-    return (
-        <Router>
-            <Switch>
-            <Route exact path="/" component={Home}></Route>
-            <Route path="/player/:id" component={Player}></Route>
-            </Switch>
-        </Router>
-    );
+class App extends Component {
+    
+    render() {
+        return (
+            <Router>
+                <Switch>
+                    <Route exact path="/" component={Home}></Route>                   
+                    <Route path="/player/:id" component={Player}></Route>                    
+                </Switch>
+            </Router>
+        );
+    }
 }
 export default App;
