@@ -5,7 +5,7 @@ function Header() {
     return (
         <header>
             <Link to={"/"}>
-                <h4 style={{color: "white"}}>ලබුනෝරුව ආරණ්‍යය</h4>
+                <h5 style={{color: "white"}}>ලබුනෝරුව ආරණ්‍යය</h5>
             </Link>            
         </header>
     );
