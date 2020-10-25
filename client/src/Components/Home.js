@@ -16,8 +16,7 @@ export default class Home extends Component {
         this.setState({ videoId: this.props.match.params.id });
     }
 
-    handlerOnClick(vidId) {
-        
+    handlerOnClick(vidId) {        
         this.setState({ videoId: vidId });
     }
 
