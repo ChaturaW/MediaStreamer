@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 export default class VideoList extends Component {
 
@@ -25,13 +26,15 @@ export default class VideoList extends Component {
                 <div className="row">
                     {this.state.videos.map(video =>
                         <div className="col-md-4" key={video.id}>
-                            <div className="card border-0" onClick={(e) => this.props.handler(video.id, e)}>
-                                <img src={`http://192.168.1.7:4000${video.poster}`} alt={video.name} />
-                                <div className="card-body">
-                                    <p>{video.name}</p>
-                                    <p>{video.duration}</p>
+                            <Link to={`/player/${video.id}`} onClick={(e) => this.props.handler(video.id, e)}>
+                                <div className="card border-0" >
+                                    <img src={`http://192.168.1.7:4000${video.poster}`} alt={video.name} />
+                                    <div className="card-body">
+                                        <p>{video.name}</p>
+                                        <p>{video.duration}</p>
+                                    </div>
                                 </div>
-                            </div>
+                            </Link>
                         </div>
                     )}
                 </div>

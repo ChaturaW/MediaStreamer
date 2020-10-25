@@ -10,13 +10,13 @@ import './App.css';
 import { Component } from 'react';
 
 class App extends Component {
-    
+
     render() {
         return (
             <Router>
                 <Switch>
-                    <Route exact path="/" component={Home}></Route>                   
-                    <Route path="/player/:id" component={Player}></Route>                    
+                    <Route key="home" exact path="/" component={Home}></Route>
+                    <Route key="player" path="/player/:id" component={Home}></Route>
                 </Switch>
             </Router>
         );

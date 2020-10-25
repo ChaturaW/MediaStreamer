@@ -11,18 +11,22 @@ export default class Home extends Component {
         };
         this.handlerOnClick = this.handlerOnClick.bind(this);
     }
-  
-    handlerOnClick(vidId){
-        console.log("handler in parent " + vidId);
-        this.setState({ videoId: vidId });       
+
+    async componentDidMount() {
+        this.setState({ videoId: this.props.match.params.id });
+    }
+
+    handlerOnClick(vidId) {
+        
+        this.setState({ videoId: vidId });
     }
 
     render() {
-        return (
+        return (            
             <div className="App App-header">
                 <Header />
-                <Player videoId={this.state.videoId}/>
-                <VideoList handler={this.handlerOnClick} />               
+                <Player videoId={this.state.videoId} />
+                <VideoList handler={this.handlerOnClick} />
             </div>
         )
     }
