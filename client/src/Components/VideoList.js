@@ -26,7 +26,7 @@ export default class VideoList extends Component {
                 <div className="row">
                     {this.state.videos.map(video =>
                         <div className="col-md-4" key={video.id}>
-                            <Link to={`/player/${video.id}`} onClick={(e) => this.props.handler(video.id, e)}>
+                            <Link to={`/vid/${video.id}`} onClick={(e) => this.props.handler(video.id, e)}>
                                 <div className="card border-0" >
                                     <img src={`http://192.168.1.7:4000${video.poster}`} alt={video.name} />
                                     <div className="card-body">

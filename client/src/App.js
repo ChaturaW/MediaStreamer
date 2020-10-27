@@ -16,7 +16,7 @@ class App extends Component {
             <Router>
                 <Switch>
                     <Route key="home" exact path="/" component={Home}></Route>
-                    <Route key="player" path="/player/:id" component={Home}></Route>
+                    <Route key="player" path="/vid/:id" component={Home}></Route>
                 </Switch>
             </Router>
         );
