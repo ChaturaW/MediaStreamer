@@ -2,19 +2,16 @@
     "videos": [
     {
         "id": 1,
-        "poster": "/thumbnail/1",
         "duration": "3 mins",
         "name": "මහ පිරිත"
     },
     {
         "id": 2,
-        "poster": "/thumbnail/2",
         "duration": "4 mins",
         "name": "සෙත් පිරිත්"
     },
     {
         "id": 3,
-        "poster": "/thumbnail/3",
         "duration": "2 mins",
         "name": "බුදු ගුණ"
     }
