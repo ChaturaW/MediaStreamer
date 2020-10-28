@@ -14,7 +14,7 @@ export default class VideoList extends Component {
         try {
             const response = await fetch('http://192.168.1.7:4000/videos');
             const data = await response.json();
-            this.setState({ videos: [...data] });
+            this.setState({ videos: [...data] });            
         } catch (error) {
             console.log(error);
         }

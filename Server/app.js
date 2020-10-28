@@ -2,37 +2,19 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const cors = require('cors');
-const thumbsupply = require('thumbsupply');
-
-const videos = [
-    {
-        id: 1,
-        poster: '/thumbnail/1',
-        duration: '3 mins',
-        name: 'මහ පිරිත'
-    },
-    {
-        id: 2,
-        poster: '/thumbnail/2',
-        duration: '4 mins',
-        name: 'සෙත් පිරිත්'
-    },
-    {
-        id: 3,
-        poster: '/thumbnail/3',
-        duration: '2 mins',
-        name: 'බුදු ගුණ'
-    },
-];
+//const thumbsupply = require('thumbsupply');
 
 const app = express();
 
-/* app.get('/video', (req, res) => {
-    res.sendFile('Media/Sample1.mp4', { root: __dirname });
-}); */
-
 app.use(cors());
-app.get('/videos', (req, res) => res.json(videos));
+
+app.get('/videos', (req, res) => {
+    fs.readFile('Metadata/Videos.json', (err, data) => {
+        if (err) throw err;
+        let jsn = JSON.parse(data);        
+        res.json(jsn.videos);
+    })   
+});
 
 app.get('/video/:id', (req, res) => {
     const path = `Media/${req.params.id}.mp4`;
@@ -44,9 +26,9 @@ app.get('/video/:id', (req, res) => {
         const start = parseInt(parts[0], 10);
         const end = parts[1]
             ? parseInt(parts[1], 10)
-            : fileSize-1;
-        const chunksize = (end-start) + 1;
-        const file = fs.createReadStream(path, {start, end});
+            : fileSize - 1;
+        const chunksize = (end - start) + 1;
+        const file = fs.createReadStream(path, { start, end });
         const head = {
             'Content-Range': `bytes ${start}-${end}/${fileSize}`,
             'Accept-Ranges': 'bytes',
@@ -64,10 +46,6 @@ app.get('/video/:id', (req, res) => {
         fs.createReadStream(path).pipe(res);
     }
 });
-
-/* app.get('/video/:id/poster', (req, res) => {
-    console.log(id);
-}); */
 
 app.get('/thumbnail/:id', (req, res) => {
     const path = `Media/${req.params.id}.png`;

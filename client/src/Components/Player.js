@@ -2,9 +2,7 @@ import React, { Component } from 'react'
 
 export default class Player extends Component {
 
-    render() {
-        console.log("Player component " + this.props.videoId);
-
+    render() {   
         if (this.props.videoId == null) {
             return null;
         }
