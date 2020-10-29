@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 export default class Player extends Component {
 
@@ -10,7 +11,7 @@ export default class Player extends Component {
         return (
             <React.Fragment>
                 <video key={this.props.videoId} controls autoPlay>
-                    <source src={`http://192.168.1.7:4000/video/${this.props.videoId}`} type="video/mp4"></source>
+                    <source src={`${SERVER_URL}/video/${this.props.videoId}`} type="video/mp4"></source>
                 </video>
             </React.Fragment>
         )
