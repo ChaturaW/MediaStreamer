@@ -32,8 +32,8 @@ export default class VideoList extends Component {
                                 <div className="card border-0" >
                                     <img src={`${SERVER_URL}/thumbnail/${video.id}`} alt={video.name} />
                                     <div className="card-body">
-                                        <p>{video.title}</p>
-                                        <p>{video.description}</p>
+                                        <p className="videoTitle">{video.title}</p>
+                                        <p className="videoDescription">{video.description}</p>
                                     </div>
                                 </div>
                             </Link>

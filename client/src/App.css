@@ -25,7 +25,7 @@ footer {
   font-size: 14px;
 }
 .card {
-  margin: 10px 0;
+  margin-top: 10px;
 }
 a, a:hover {
   color: #282c34;
@@ -45,7 +45,19 @@ img {
   object-fit: cover;
   object-position: center top;
 }
-p {
-  margin-bottom: 5px;
+.videoTitle{
+  margin-bottom: 0px;
+  margin-left: 0px;
+  font-size: 18px;
+  font-weight: 900;
+} 
+.videoDescription{
+  margin-bottom: 0px;
   font-size: 12px;
+} 
+.card-body{
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
