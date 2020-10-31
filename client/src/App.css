@@ -3,10 +3,10 @@
   color: white;  
 }
 header, footer {
-  background-color: #687864; /* #374153*/
-  text-align: center;
+  background-color: #fcf9f4; /* #687864 #374153*/
+  /* text-align: center; */
   color: white;
-  padding: 10px 0;
+  padding: 1px 0;
 }
 header {
   margin-bottom: 0px;  
@@ -43,7 +43,7 @@ video {
 img {
   height: 200px;
   object-fit: cover;
-  object-position: center top;
+  /* object-position: center top; */
 }
 .videoTitle{
   margin-bottom: 0px;
@@ -60,4 +60,11 @@ img {
   padding-bottom: 4px;
   padding-left: 0;
   font-family: Arial, Helvetica, sans-serif;
+}
+.logo{
+  width: fit-content;
+  height: fit-content;
+  padding-top: 5px;
+  padding-bottom: 1px;
+  padding-left: 20px;
 }

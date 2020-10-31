@@ -5,8 +5,8 @@ function Header() {
     return (
         <header>
             <Link to={"/"}>
-                <h5>ලබුනෝරුව ආරණ්‍යය</h5>
-            </Link>            
+                <img className="logo" src="/Logo.png" alt=""/>                
+            </Link>
         </header>
     );
 }
