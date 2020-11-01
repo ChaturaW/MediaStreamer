@@ -4,7 +4,6 @@
 }
 header, footer {
   background-color: #fcf9f4; /* #687864 #374153*/
-  /* text-align: center; */
   color: white;
   padding: 1px 0;
 }
@@ -43,7 +42,6 @@ video {
 img {
   height: 200px;
   object-fit: cover;
-  /* object-position: center top; */
 }
 .videoTitle{
   margin-bottom: 0px;
@@ -66,5 +64,10 @@ img {
   height: fit-content;
   padding-top: 5px;
   padding-bottom: 1px;
-  padding-left: 20px;
+}
+.form-control{
+  height: 30px;
+  padding-top: 5px;
+  margin-top: 5px;
+  font-family: Arial, Helvetica, sans-serif;
 }
