@@ -11,8 +11,11 @@ function Header() {
                             <img className="logo" src="/Logo.png" alt="" />
                         </Link>
                     </div>
-                    <div className="col-8">
+                    <div className="col-7">
                         <input className="form-control" type="search" placeholder="Search" aria-label="Search" />
+                    </div>
+                    <div className="col-1">
+                        <button className="searchButton"><i className="fa fa-search searchIcon"></i></button>
                     </div>
                 </div>
             </div>
