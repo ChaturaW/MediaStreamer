@@ -75,21 +75,9 @@ img {
 .form-control:focus{
   border-color:#a36609;
 }
-.searchButton{
-  height: 30px;
-  padding-top: 2px;
-  padding-right: 2px;
-  padding-bottom: 2px;
-  padding-left: 2px;
-  margin-top: 5px;
-  border: 0;
-  background-color: #fcf9f4;
-}
-.searchButton:focus{
-  outline:0;
-}
 .searchIcon{
   color: #a36609;
+  margin-top: 10px;
 }
 .searchIcon:hover{
   color: #4d3106;

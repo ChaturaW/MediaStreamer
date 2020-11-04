@@ -15,7 +15,9 @@ function Header() {
                         <input className="form-control" type="search" placeholder="Search" aria-label="Search" />
                     </div>
                     <div className="col-1">
-                        <button className="searchButton"><i className="fa fa-search searchIcon"></i></button>
+                        <Link className="searchLink" to={"/search"}>
+                            <i className="fa fa-search searchIcon"></i>
+                        </Link>
                     </div>
                 </div>
             </div>

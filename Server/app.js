@@ -16,6 +16,15 @@ app.get('/videos', (req, res) => {
     })   
 });
 
+app.get('/search', (req, res) => {
+    console.log("method");
+    fs.readFile('Metadata/Videos.json', (err, data) => {
+        if (err) throw err;
+        let jsn = JSON.parse(data);        
+        res.json(jsn.videos);
+    })   
+});
+
 app.get('/video/:id', (req, res) => {
     const path = `Media/${req.params.id}.mp4`;
     const stat = fs.statSync(path);
