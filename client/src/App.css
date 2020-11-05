@@ -75,6 +75,13 @@ img {
 .form-control:focus{
   border-color:#a36609;
 }
+.searchButton{
+  background-color: #fcf9f4;
+  border: none;
+}
+.searchButton:focus{
+  outline: none;
+}
 .searchIcon{
   color: #a36609;
   margin-top: 10px;

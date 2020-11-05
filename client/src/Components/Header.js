@@ -1,7 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 function Header() {
+    const history = useHistory();
+    const handleClick = () => history.push("/search?");
+
+    const handleChange = (e) => { }
+
     return (
         <header>
             <div className="container-fluid">
@@ -12,12 +17,16 @@ function Header() {
                         </Link>
                     </div>
                     <div className="col-7">
-                        <input className="form-control" type="search" placeholder="Search" aria-label="Search" />
+                        <input className="form-control" type="search" placeholder="Search" aria-label="Search" onChange={handleChange} />
                     </div>
                     <div className="col-1">
-                        <Link className="searchLink" to={"/search"}>
+                        <button className="searchButton" onClick={handleClick}>
                             <i className="fa fa-search searchIcon"></i>
-                        </Link>
+                        </button>
+
+                        {/* <Link className="searchLink" to={"/search"}>
+                            <i className="fa fa-search searchIcon"></i>
+                        </Link> */}
                     </div>
                 </div>
             </div>
