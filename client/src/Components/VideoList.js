@@ -13,7 +13,9 @@ export default class VideoList extends Component {
     }
 
     async componentDidMount() {
-        try {    
+        try {  
+            console.log("video list did mount - " + this.props.filter);
+
             const response = await fetch(`${SERVER_URL}/videos`);
             const data = await response.json();
             this.setState({ videos: [...data] });            
@@ -25,6 +27,7 @@ export default class VideoList extends Component {
     render() {
         return (
             <div className="container">
+                <p>{this.state.filter}</p>
                 <div className="row">
                     {this.state.videos.map(video =>
                         <div className="col-md-4" key={video.id}>

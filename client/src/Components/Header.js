@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
-function Header() {
-    const history = useHistory();
-    const handleClick = () => history.push("/search?");
+function Header(props) {
+    const searchBox = useRef(null);
 
-    const handleChange = (e) => { }
+    const history = useHistory();
+    const handleClick = (fn) => {
+        const query = searchBox.current.value;        
+        props.handler(query);
+        history.push(`/search?filter=${query}`);
+    }
 
     return (
         <header>
@@ -17,16 +21,12 @@ function Header() {
                         </Link>
                     </div>
                     <div className="col-7">
-                        <input className="form-control" type="search" placeholder="Search" aria-label="Search" onChange={handleChange} />
+                        <input ref={searchBox} className="form-control" type="search" placeholder="Search" aria-label="Search" />
                     </div>
                     <div className="col-1">
                         <button className="searchButton" onClick={handleClick}>
                             <i className="fa fa-search searchIcon"></i>
                         </button>
-
-                        {/* <Link className="searchLink" to={"/search"}>
-                            <i className="fa fa-search searchIcon"></i>
-                        </Link> */}
                     </div>
                 </div>
             </div>

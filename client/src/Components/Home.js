@@ -7,25 +7,45 @@ export default class Home extends Component {
     constructor() {
         super();
         this.state = {
-            videoId: null
+            videoId: null,
+            filter: null
         };
         this.handlerOnClick = this.handlerOnClick.bind(this);
+        this.searchOnClick = this.searchOnClick.bind(this);
     }
 
     async componentDidMount() {
-        this.setState({ videoId: this.props.match.params.id });
+
+        /* const queryString = require('query-string');
+        const parsed = queryString.parse(this.props.location.search);
+        console.log("Home component did mount " + parsed.filter);        
+
+        this.setState({
+            videoId: this.props.match.params.id,
+            filter: parsed.filter
+        }); */
+
+        this.setState({
+            videoId: this.props.match.params.id
+        });
     }
 
-    handlerOnClick(vidId) {        
+    searchOnClick(searchQuery) {
+        this.setState({ filter: searchQuery });
+    }
+
+    handlerOnClick(vidId) {
         this.setState({ videoId: vidId });
     }
 
     render() {
-        return (            
+        console.log("Home component render " + this.state.filter);
+
+        return (
             <div className="App App-header">
-                <Header />
+                <Header handler={this.searchOnClick} />
                 <Player videoId={this.state.videoId} />
-                <VideoList handler={this.handlerOnClick} />
+                <VideoList filter={this.state.filter} handler={this.handlerOnClick} />
             </div>
         )
     }
