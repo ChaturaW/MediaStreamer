@@ -5,7 +5,6 @@ import {
     Switch,
 } from "react-router-dom";
 import Home from './Components/Home';
-import Player from './Components/Player';
 import './App.css';
 import { Component } from 'react';
 

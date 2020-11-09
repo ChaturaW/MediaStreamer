@@ -2,7 +2,6 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const cors = require('cors');
-//const thumbsupply = require('thumbsupply');
 
 const app = express();
 
@@ -11,18 +10,22 @@ app.use(cors());
 app.get('/videos', (req, res) => {
     fs.readFile('Metadata/Videos.json', (err, data) => {
         if (err) throw err;
-        let jsn = JSON.parse(data);        
+        let jsn = JSON.parse(data);
         res.json(jsn.videos);
-    })   
+    })
 });
 
 app.get('/search', (req, res) => {
-    console.log("method");
+    console.log(req.query.filter);
+    
+    const searchText = req.query.filter;
+    
     fs.readFile('Metadata/Videos.json', (err, data) => {
         if (err) throw err;
-        let jsn = JSON.parse(data);        
-        res.json(jsn.videos);
-    })   
+        let jsn = JSON.parse(data);
+        const result = jsn.videos.filter(video => video.id == searchText);     
+        res.json(result);
+    })
 });
 
 app.get('/video/:id', (req, res) => {

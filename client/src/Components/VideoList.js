@@ -5,20 +5,18 @@ const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 export default class VideoList extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+        
         this.state = {
-            videos: []
+            videos: [],
+            searchText: null
         };
     }
 
     async componentDidMount() {
-        try {  
-            console.log("video list did mount - " + this.props.filter);
+        try {
 
-            const response = await fetch(`${SERVER_URL}/videos`);
-            const data = await response.json();
-            this.setState({ videos: [...data] });            
         } catch (error) {
             console.log(error);
         }
@@ -27,9 +25,8 @@ export default class VideoList extends Component {
     render() {
         return (
             <div className="container">
-                <p>{this.state.filter}</p>
                 <div className="row">
-                    {this.state.videos.map(video =>
+                    {this.props.videos.map(video =>
                         <div className="col-md-4" key={video.id}>
                             <Link to={`/vid/${video.id}`} onClick={(e) => this.props.handler(video.id, e)}>
                                 <div className="card border-0" >
@@ -37,6 +34,7 @@ export default class VideoList extends Component {
                                     <div className="card-body">
                                         <p className="videoTitle">{video.title}</p>
                                         <p className="videoDescription">{video.description}</p>
+                                        <p>{this.props.filter}</p>
                                     </div>
                                 </div>
                             </Link>
