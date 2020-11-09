@@ -18,12 +18,15 @@ app.get('/videos', (req, res) => {
 app.get('/search', (req, res) => {
     console.log(req.query.filter);
     
-    const searchText = req.query.filter;
+    const searchText = req.query.filter.toLowerCase();
     
     fs.readFile('Metadata/Videos.json', (err, data) => {
         if (err) throw err;
         let jsn = JSON.parse(data);
-        const result = jsn.videos.filter(video => video.id == searchText);     
+        const result = jsn.videos.filter(video => 
+            video.id == searchText ||
+            video.title.toLowerCase().includes(searchText) ||
+            video.description.toLowerCase().includes(searchText));
         res.json(result);
     })
 });
