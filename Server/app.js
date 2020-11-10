@@ -15,11 +15,8 @@ app.get('/videos', (req, res) => {
     })
 });
 
-app.get('/search', (req, res) => {
-    console.log(req.query.filter);
-    
-    const searchText = req.query.filter.toLowerCase();
-    
+app.get('/search', (req, res) => {    
+    const searchText = req.query.filter.toLowerCase();    
     fs.readFile('Metadata/Videos.json', (err, data) => {
         if (err) throw err;
         let jsn = JSON.parse(data);
