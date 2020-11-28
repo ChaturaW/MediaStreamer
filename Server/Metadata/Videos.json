@@ -2,17 +2,17 @@
     "videos": [
     {
         "id": 1,
-        "description": "This is the maha pirith deshanaya. Downloaded from youtube. Recommended to be played daily in every household",
+        "description": "Maha pirith deshanaya. Downloaded from youtube. Recommended",
         "title": "මහ පිරිත"
     },
     {
         "id": 2,
-        "description": "This is the seth pirith deshanawa",
+        "description": "Seth pirith deshanaya",
         "title": "සෙත් පිරිත්"
     },
     {
         "id": 3,
-        "description": "This is the Budhu Guna deshanawa",
+        "description": "Budhu Guna bawanawa",
         "title": "බුදු ගුණ"
     }
 ]
