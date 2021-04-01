@@ -106,3 +106,6 @@ dist
 # TernJS port file
 .tern-port
 .vscode/launch.json
+client/yarn.lock
+.DS_Store
+Server/yarn.lock
